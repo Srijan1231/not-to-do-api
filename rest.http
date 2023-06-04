@@ -1,0 +1,29 @@
+### Testing for server
+
+GET http://localhost:8000/api/v1/task
+
+### Testing for server
+
+POST  http://localhost:8000/api/v1/task
+Content-Type: application/json
+
+{
+    "task":"watching tv",
+    "hr":33,
+    "type":"entry",
+    "_id":"300"
+    
+}
+
+### Testing for server
+
+PUT http://localhost:8000/api/v1/task
+
+### Testing for server
+
+DELETE  http://localhost:8000/api/v1/task/
+Content-Type: application/json
+
+{
+   "_id": "300" 
+}
