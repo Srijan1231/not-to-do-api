@@ -1,24 +1,20 @@
 import express from "express";
+import cors from "cors";
+
 const app = express();
+import taskRouter from "./src/router/taskRouter.js";
 const PORT = 8000;
-//middelware
+import { mongoConnect } from "./src/config/mongoDB.js";
+mongoConnect();
 app.use(express.json());
-//api endpoints
-import taskRouter from "./src/routers/taskRouter.js";
+app.use(cors());
 app.use("/api/v1/task", taskRouter);
-//Task CRUD
-
-//read data from database
-
-app.get("/", (req, res) => {
-  res.json({
-    status: "success",
-    message: "Server running as normal",
-  });
-});
+// app.get("/", (req, res) => {
+//   res.json({ message: "server running healthy" });
+// });
 
 app.listen(PORT, (error) => {
-  error && console.log(error.message);
-
-  console.log(`Server started and running at http://localhost:${PORT}`);
+  error
+    ? console.log(error.message)
+    : console.log(`Server running at http://localhost:${PORT}`);
 });

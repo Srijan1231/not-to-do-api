@@ -1,29 +1,28 @@
-### Testing for server
-
+###test get
 GET http://localhost:8000/api/v1/task
 
-### Testing for server
+### POST method
 
-POST  http://localhost:8000/api/v1/task
+POST http://localhost:8000/api/v1/task
+Content-Type: application/json
+
+
+{
+    "task":"shooting ",
+    "hr":2,
+    "type":"entry"
+}
+
+### patch
+PATCH http://localhost:8000/api/v1/task
 Content-Type: application/json
 
 {
-    "task":"watching tv",
-    "hr":33,
-    "type":"entry",
-    "_id":"300"
-    
+    "_id":"64850e72f653eb2bdf32a062",
+    "type":"bad"
 }
 
-### Testing for server
+### Delete
 
-PUT http://localhost:8000/api/v1/task
+DELETE http://localhost:8000/api/v1/task/64850e66f653eb2bdf32a060
 
-### Testing for server
-
-DELETE  http://localhost:8000/api/v1/task/
-Content-Type: application/json
-
-{
-   "_id": "300" 
-}
