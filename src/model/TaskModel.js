@@ -13,6 +13,13 @@ export const readTasks = () => {
 export const switchTask = (_id, type) => {
   return TaskModelSchema.findByIdAndUpdate(_id, { type });
 };
-export const deleteTask = (_id) => {
+export const deleteTaskById = (_id) => {
   return TaskModelSchema.findByIdAndDelete(_id);
+};
+export const deleteManyTasks = (ids) => {
+  return TaskModelSchema.deleteMany({
+    _id: {
+      $in: ids,
+    },
+  });
 };
