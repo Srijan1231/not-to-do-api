@@ -5,17 +5,11 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 const app = express();
-
-const PORT = 8000 || process.env.PORT;
 import path from "path";
 
+const PORT = 8000 || process.env.PORT;
+
 const __dirname = path.resolve();
-console.log(__dirname);
-
-// connect mongoDb
-
-// import { mongoConnect } from "./src/config/mongoDb.js";
-// mongoConnect();
 
 // middleware
 app.use(express.json());
@@ -23,15 +17,13 @@ app.use(cors());
 app.use(express.static(__dirname + "/build"));
 
 //api endpoints
-import taskRouter from "./src/routers/taskRouter.js";
+import taskRouter from "./src/router/taskRouter.js";
 
 app.use("/api/v1/task", taskRouter);
 
 app.use("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
-
-console.log(process.env.NODE_ENV);
 
 app.get("/", (req, res) => {
   res.json({
