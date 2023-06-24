@@ -12,5 +12,6 @@ export const mongoConnect = async () => {
     con && console.log("mongo is connected");
   } catch (error) {
     console.log(error);
+    throw new error(error);
   }
 };
