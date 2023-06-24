@@ -1,6 +1,10 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
+
 import cors from "cors";
 import path from "path";
+
 const __dirname = path.resolve();
 console.log(__dirname);
 const app = express();

@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const result = await createTask(req.body);
-    console.log(result);
+
     result?._id
       ? res.json({
           status: "success",
