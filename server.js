@@ -7,7 +7,7 @@ import cors from "cors";
 const app = express();
 import path from "path";
 
-const PORT = 8000 || process.env.PORT;
+const PORT = process.env.PORT || 8000;
 
 const __dirname = path.resolve();
 
