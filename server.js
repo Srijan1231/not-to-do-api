@@ -9,7 +9,7 @@ const __dirname = path.resolve();
 console.log(__dirname);
 const app = express();
 import taskRouter from "./src/router/taskRouter.js";
-const PORT = 8000;
+const PORT = 8000 || process.env.PORT;
 import { mongoConnect } from "./src/config/mongoDB.js";
 mongoConnect();
 app.use(express.json());
